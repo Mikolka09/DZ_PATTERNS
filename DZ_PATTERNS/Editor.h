@@ -2,6 +2,8 @@
 
 #include<iostream>
 #include<string>
+#include<fstream>
+#include <cstdio>
 
 using namespace std;
 
@@ -85,38 +87,65 @@ public:
 			switch (var)
 			{
 			case 1:
+			{
 				system("cls");
 				cout << "Введите имя файла: ";
 				cin >> name;
 				name = name + ".txt";
+				ofstream out(name, ios::out);
+				out.close();
 				cout << "Тектовый файл " << name << " создан!" << endl;
 				system("pause");
 				break;
+			}
 			case 2:
+			{
 				system("cls");
 				cout << "Введите имя файла: ";
 				cin >> name;
 				name = name + ".txt";
-				cout << "Тектовый файл " << name <<" открыт!" << endl;
+				ifstream in(name, ios::in);
+				if (in.is_open())
+				{
+					cout << "Тектовый файл " << name << " открыт!" << endl;
+
+				}
+				in.close();
 				system("pause");
 				break;
+			}
 			case 3:
+			{
 				system("cls");
 				cout << "Введите имя файла: ";
 				cin >> name;
 				name = name + ".txt";
+				ofstream out(name, ios::out);
+				string data;
+				cout << "Введите данные для записи в файл: " << endl;
+				out << data;
+				out.close();
 				cout << "Файл " << name << " сохранен!" << endl;
 				system("pause");
 				break;
+			}
 			case 4:
+			{
 				system("cls");
-				cout << "Введите новое имя файла: ";
+				cout << "Введите имя файла: ";
 				cin >> name;
 				name = name + ".txt";
+				cout << "Введите новое имя файла: ";
+				string name2;
+				cin >> name2;
+				name2 = name2 + ".txt";
+				
 				cout << "Файл " << name << " сохранен под новым именем!" << endl;
 				system("pause");
 				break;
+			}
 			case 5:
+			{
 				system("cls");
 				cout << "Введите имя файла для печати: ";
 				cin >> name;
@@ -124,6 +153,7 @@ public:
 				cout << "Файл " << name << " напечатан!" << endl;
 				system("pause");
 				break;
+			}
 			case 6:
 				return;
 				break;
