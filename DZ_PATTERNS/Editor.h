@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 
 #include<iostream>
 #include<string>
@@ -19,7 +19,7 @@ class TextDocument : public Document
 public:
 	string get_name() override
 	{
-		return "Тектовый документ";
+		return "РўРµРєС‚РѕРІС‹Р№ РґРѕРєСѓРјРµРЅС‚";
 	}
 };
 
@@ -28,7 +28,7 @@ class GraphicDocument : public Document
 public:
 	string get_name() override
 	{
-		return "Графический документ";
+		return "Р“СЂР°С„РёС‡РµСЃРєРёР№ РґРѕРєСѓРјРµРЅС‚";
 	}
 };
 
@@ -37,7 +37,7 @@ class ExcelDocument : public Document
 public:
 	string get_name() override
 	{
-		return "Еxcel документ";
+		return "Р•xcel РґРѕРєСѓРјРµРЅС‚";
 	}
 };
 
@@ -46,7 +46,7 @@ class PDFDocument : public Document
 public:
 	string get_name() override
 	{
-		return "PDF документ";
+		return "PDF РґРѕРєСѓРјРµРЅС‚";
 	}
 };
 
@@ -83,23 +83,23 @@ public:
 	string create_file() override
 	{
 		system("cls");
-		cout << "СОЗДАНИЕ ФАЙЛА" << endl;
+		cout << "РЎРћР—Р”РђРќРР• Р¤РђР™Р›Рђ" << endl;
 		cout << "--------------\n" << endl;
-		cout << "Введите имя файла: ";
+		cout << "Р’РІРµРґРёС‚Рµ РёРјСЏ С„Р°Р№Р»Р°: ";
 		cin >> name_;
 		name_ = name_ + ".txt";
 		ofstream out(name_, ios::out);
 		out.close();
-		cout << "Пустой тектовый файл " << name_ << " создан!" << endl;
+		cout << "РџСѓСЃС‚РѕР№ С‚РµРєС‚РѕРІС‹Р№ С„Р°Р№Р» " << name_ << " СЃРѕР·РґР°РЅ!" << endl;
 		system("pause");
 		return this->name_;
 	}
 	string open_file() override
 	{
 		system("cls");
-		cout << "Открытие текстового файла:\n" << endl;
-		cout << "1. Открытие только созданного файла\n" << "2. Открытие другого файла\n" << endl;
-		cout << "Ваш выбор: ";
+		cout << "РћС‚РєСЂС‹С‚РёРµ С‚РµРєСЃС‚РѕРІРѕРіРѕ С„Р°Р№Р»Р°:\n" << endl;
+		cout << "1. РћС‚РєСЂС‹С‚РёРµ С‚РѕР»СЊРєРѕ СЃРѕР·РґР°РЅРЅРѕРіРѕ С„Р°Р№Р»Р°\n" << "2. РћС‚РєСЂС‹С‚РёРµ РґСЂСѓРіРѕРіРѕ С„Р°Р№Р»Р°\n" << endl;
+		cout << "Р’Р°С€ РІС‹Р±РѕСЂ: ";
 		int var;
 		cin >> var;
 		switch (var)
@@ -114,11 +114,11 @@ public:
 				{
 					in >> this->data_;
 				}
-				cout << "Тектовый файл " << this->name_ << " открыт!\n"
-					<< "Можете продолжить работу с этим файлом" << endl;
+				cout << "РўРµРєС‚РѕРІС‹Р№ С„Р°Р№Р» " << this->name_ << " РѕС‚РєСЂС‹С‚!\n"
+					<< "РњРѕР¶РµС‚Рµ РїСЂРѕРґРѕР»Р¶РёС‚СЊ СЂР°Р±РѕС‚Сѓ СЃ СЌС‚РёРј С„Р°Р№Р»РѕРј" << endl;
 			}
 			else
-				cout << "Файл не найден!" << endl;
+				cout << "Р¤Р°Р№Р» РЅРµ РЅР°Р№РґРµРЅ!" << endl;
 			in.close();
 			system("pause");
 			return this->data_;
@@ -127,7 +127,7 @@ public:
 		case 2:
 		{
 			system("cls");
-			cout << "Введите имя файла: ";
+			cout << "Р’РІРµРґРёС‚Рµ РёРјСЏ С„Р°Р№Р»Р°: ";
 			cin >> this->name_;
 			this->name_ = this->name_ + ".txt";
 			string data;
@@ -142,11 +142,11 @@ public:
 					strcpy(buff, buf);
 					data = buff;
 				}
-				cout << "Тектовый файл " << this->name_ << " открыт!\n"
-					<< "Можете продолжить работу с этим файлом" << endl;
+				cout << "РўРµРєС‚РѕРІС‹Р№ С„Р°Р№Р» " << this->name_ << " РѕС‚РєСЂС‹С‚!\n"
+					<< "РњРѕР¶РµС‚Рµ РїСЂРѕРґРѕР»Р¶РёС‚СЊ СЂР°Р±РѕС‚Сѓ СЃ СЌС‚РёРј С„Р°Р№Р»РѕРј" << endl;
 			}
 			else
-				cout << "Файл не найден!" << endl;
+				cout << "Р¤Р°Р№Р» РЅРµ РЅР°Р№РґРµРЅ!" << endl;
 			in.close();
 			system("pause");
 			return this->data_ = data;
@@ -160,35 +160,35 @@ public:
 	void save_file() override
 	{
 		system("cls");
-		cout << "СОХРАНЕНИЕ ФАЙЛА" << endl;
+		cout << "РЎРћРҐР РђРќР•РќРР• Р¤РђР™Р›Рђ" << endl;
 		cout << "----------------\n" << endl;
-		cout << "Введите имя файла: ";
+		cout << "Р’РІРµРґРёС‚Рµ РёРјСЏ С„Р°Р№Р»Р°: ";
 		cin >> this->name_;
 		this->name_ = this->name_ + ".txt";
 		ofstream out(this->name_, ios::out);
 		string data;
 		char* d = new char;
 		cin.ignore();
-		cout << "Введите данные для записи в файл: " << endl;
+		cout << "Р’РІРµРґРёС‚Рµ РґР°РЅРЅС‹Рµ РґР»СЏ Р·Р°РїРёСЃРё РІ С„Р°Р№Р»: " << endl;
 		cin.getline(d, 1200);
 		data = d;
 		out << data;
 		out.close();
 		this->data_ = data;
-		cout << "Файл " << this->name_ << " сохранен!" << endl;
+		cout << "Р¤Р°Р№Р» " << this->name_ << " СЃРѕС…СЂР°РЅРµРЅ!" << endl;
 		system("pause");
 	}
 	void save_new_name_file() override
 	{
 		system("cls");
-		cout << "СОХРАНЕНИЕ ФАЙЛА ПОД НОВЫМ ИМЕНЕМ" << endl;
+		cout << "РЎРћРҐР РђРќР•РќРР• Р¤РђР™Р›Рђ РџРћР” РќРћР’Р«Рњ РРњР•РќР•Рњ" << endl;
 		cout << "---------------------------------\n" << endl;
 
 		string name2;
 		bool f = true;
 		while (f)
 		{
-			cout << "Введите новое имя файла: ";
+			cout << "Р’РІРµРґРёС‚Рµ РЅРѕРІРѕРµ РёРјСЏ С„Р°Р№Р»Р°: ";
 			cin >> name2;
 			name2 = name2 + ".txt";
 			if (this->name_ != name2)
@@ -199,17 +199,17 @@ public:
 		ofstream out(name2, ios::out);
 		out << this->data_;
 		out.close();
-		cout << "Данные текстового файла " << this->name_ << " сохранен под новым именем - " << name2 << endl;
+		cout << "Р”Р°РЅРЅС‹Рµ С‚РµРєСЃС‚РѕРІРѕРіРѕ С„Р°Р№Р»Р° " << this->name_ << " СЃРѕС…СЂР°РЅРµРЅ РїРѕРґ РЅРѕРІС‹Рј РёРјРµРЅРµРј - " << name2 << endl;
 		system("pause");
 
 	}
 	void print() override
 	{
 		system("cls");
-		cout << "ПЕЧАТЬ ДАННЫХ ИЗ ФАЙЛА" << endl;
+		cout << "РџР•Р§РђРўР¬ Р”РђРќРќР«РҐ РР— Р¤РђР™Р›Рђ" << endl;
 		cout << "----------------------\n" << endl;
 		string name;
-		cout << "Введите имя файла для печати: ";
+		cout << "Р’РІРµРґРёС‚Рµ РёРјСЏ С„Р°Р№Р»Р° РґР»СЏ РїРµС‡Р°С‚Рё: ";
 		cin >> name;
 		name = name + ".txt";
 		string data;
@@ -223,14 +223,14 @@ public:
 			data = buff;
 		}
 		else
-			cout << "Файл не найден!" << endl;
+			cout << "Р¤Р°Р№Р» РЅРµ РЅР°Р№РґРµРЅ!" << endl;
 		in.close();
 		system("cls");
-		cout << "ПЕЧАТЬ ДАННЫХ ИЗ ФАЙЛА" << endl;
+		cout << "РџР•Р§РђРўР¬ Р”РђРќРќР«РҐ РР— Р¤РђР™Р›Рђ" << endl;
 		cout << "--------------------------------------------------\n" << endl;
 		cout << data << endl << endl;
 		cout << "--------------------------------------------------" << endl;
-		cout << "Файл " << name << " напечатан!" << endl;
+		cout << "Р¤Р°Р№Р» " << name << " РЅР°РїРµС‡Р°С‚Р°РЅ!" << endl;
 		system("pause");
 	}
 	void menu_editor(string n)  override
@@ -238,10 +238,10 @@ public:
 		while (true)
 		{
 			system("cls");
-			cout << "Редактор - " << n << ":\n" << endl;
-			cout << "1. Создание файла\n" << "2. Открытие файла\n" << "3. Сохранение файла\n"
-				<< "4. Сохранение под новым именем\n" << "5. Печать\n" << "6. Закрытие\n" << endl;
-			cout << "Ваш выбор: ";
+			cout << "Р РµРґР°РєС‚РѕСЂ - " << n << ":\n" << endl;
+			cout << "1. РЎРѕР·РґР°РЅРёРµ С„Р°Р№Р»Р°\n" << "2. РћС‚РєСЂС‹С‚РёРµ С„Р°Р№Р»Р°\n" << "3. РЎРѕС…СЂР°РЅРµРЅРёРµ С„Р°Р№Р»Р°\n"
+				<< "4. РЎРѕС…СЂР°РЅРµРЅРёРµ РїРѕРґ РЅРѕРІС‹Рј РёРјРµРЅРµРј\n" << "5. РџРµС‡Р°С‚СЊ\n" << "6. Р—Р°РєСЂС‹С‚РёРµ\n" << endl;
+			cout << "Р’Р°С€ РІС‹Р±РѕСЂ: ";
 			int var;
 			cin >> var;
 			switch (var)
@@ -295,35 +295,35 @@ public:
 	string create_file() override
 	{
 		system("cls");
-		cout << "Пустой графический файл " << name_ << " создан!" << endl;
+		cout << "РџСѓСЃС‚РѕР№ РіСЂР°С„РёС‡РµСЃРєРёР№ С„Р°Р№Р» " << name_ << " СЃРѕР·РґР°РЅ!" << endl;
 		system("pause");
 		return this->name_;
 	}
 	string open_file() override
 	{
 		system("cls");
-		cout << "Графический файл " << this->name_ << " открыт!\n"
-			<< "Можете продолжить работу с этим файлом" << endl;
+		cout << "Р“СЂР°С„РёС‡РµСЃРєРёР№ С„Р°Р№Р» " << this->name_ << " РѕС‚РєСЂС‹С‚!\n"
+			<< "РњРѕР¶РµС‚Рµ РїСЂРѕРґРѕР»Р¶РёС‚СЊ СЂР°Р±РѕС‚Сѓ СЃ СЌС‚РёРј С„Р°Р№Р»РѕРј" << endl;
 		system("pause");
 		return this->data_;
 	}
 	void save_file() override
 	{
 		system("cls");
-		cout << "Файл " << this->name_ << " сохранен!" << endl;
+		cout << "Р¤Р°Р№Р» " << this->name_ << " СЃРѕС…СЂР°РЅРµРЅ!" << endl;
 		system("pause");
 	}
 	void save_new_name_file() override
 	{
 		system("cls");
-		cout << "Данные графического файла " << this->name_ << " сохранен под новым именем - " << endl;
+		cout << "Р”Р°РЅРЅС‹Рµ РіСЂР°С„РёС‡РµСЃРєРѕРіРѕ С„Р°Р№Р»Р° " << this->name_ << " СЃРѕС…СЂР°РЅРµРЅ РїРѕРґ РЅРѕРІС‹Рј РёРјРµРЅРµРј - " << endl;
 		system("pause");
 
 	}
 	void print() override
 	{
 		system("cls");
-		cout << "Файл " << name_ << " напечатан!" << endl;
+		cout << "Р¤Р°Р№Р» " << name_ << " РЅР°РїРµС‡Р°С‚Р°РЅ!" << endl;
 		system("pause");
 	}
 	void menu_editor(string n)  override
@@ -331,10 +331,10 @@ public:
 		while (true)
 		{
 			system("cls");
-			cout << "Редактор - " << n << ":\n" << endl;
-			cout << "1. Создание файла\n" << "2. Открытие файла\n" << "3. Сохранение файла\n"
-				<< "4. Сохранение под новым именем\n" << "5. Печать\n" << "6. Закрытие\n" << endl;
-			cout << "Ваш выбор: ";
+			cout << "Р РµРґР°РєС‚РѕСЂ - " << n << ":\n" << endl;
+			cout << "1. РЎРѕР·РґР°РЅРёРµ С„Р°Р№Р»Р°\n" << "2. РћС‚РєСЂС‹С‚РёРµ С„Р°Р№Р»Р°\n" << "3. РЎРѕС…СЂР°РЅРµРЅРёРµ С„Р°Р№Р»Р°\n"
+				<< "4. РЎРѕС…СЂР°РЅРµРЅРёРµ РїРѕРґ РЅРѕРІС‹Рј РёРјРµРЅРµРј\n" << "5. РџРµС‡Р°С‚СЊ\n" << "6. Р—Р°РєСЂС‹С‚РёРµ\n" << endl;
+			cout << "Р’Р°С€ РІС‹Р±РѕСЂ: ";
 			int var;
 			cin >> var;
 			switch (var)
@@ -388,35 +388,35 @@ public:
 	string create_file() override
 	{
 		system("cls");
-		cout << "Пустой Excel файл " << name_ << " создан!" << endl;
+		cout << "РџСѓСЃС‚РѕР№ Excel С„Р°Р№Р» " << name_ << " СЃРѕР·РґР°РЅ!" << endl;
 		system("pause");
 		return this->name_;
 	}
 	string open_file() override
 	{
 		system("cls");
-		cout << "Excel файл " << this->name_ << " открыт!\n"
-			<< "Можете продолжить работу с этим файлом" << endl;
+		cout << "Excel С„Р°Р№Р» " << this->name_ << " РѕС‚РєСЂС‹С‚!\n"
+			<< "РњРѕР¶РµС‚Рµ РїСЂРѕРґРѕР»Р¶РёС‚СЊ СЂР°Р±РѕС‚Сѓ СЃ СЌС‚РёРј С„Р°Р№Р»РѕРј" << endl;
 		system("pause");
 		return this->data_;
 	}
 	void save_file() override
 	{
 		system("cls");
-		cout << "Файл " << this->name_ << " сохранен!" << endl;
+		cout << "Р¤Р°Р№Р» " << this->name_ << " СЃРѕС…СЂР°РЅРµРЅ!" << endl;
 		system("pause");
 	}
 	void save_new_name_file() override
 	{
 		system("cls");
-		cout << "Данные Excel файла " << this->name_ << " сохранен под новым именем - " << endl;
+		cout << "Р”Р°РЅРЅС‹Рµ Excel С„Р°Р№Р»Р° " << this->name_ << " СЃРѕС…СЂР°РЅРµРЅ РїРѕРґ РЅРѕРІС‹Рј РёРјРµРЅРµРј - " << endl;
 		system("pause");
 
 	}
 	void print() override
 	{
 		system("cls");
-		cout << "Файл " << name_ << " напечатан!" << endl;
+		cout << "Р¤Р°Р№Р» " << name_ << " РЅР°РїРµС‡Р°С‚Р°РЅ!" << endl;
 		system("pause");
 	}
 	void menu_editor(string n)  override
@@ -424,10 +424,10 @@ public:
 		while (true)
 		{
 			system("cls");
-			cout << "Редактор - " << n << ":\n" << endl;
-			cout << "1. Создание файла\n" << "2. Открытие файла\n" << "3. Сохранение файла\n"
-				<< "4. Сохранение под новым именем\n" << "5. Печать\n" << "6. Закрытие\n" << endl;
-			cout << "Ваш выбор: ";
+			cout << "Р РµРґР°РєС‚РѕСЂ - " << n << ":\n" << endl;
+			cout << "1. РЎРѕР·РґР°РЅРёРµ С„Р°Р№Р»Р°\n" << "2. РћС‚РєСЂС‹С‚РёРµ С„Р°Р№Р»Р°\n" << "3. РЎРѕС…СЂР°РЅРµРЅРёРµ С„Р°Р№Р»Р°\n"
+				<< "4. РЎРѕС…СЂР°РЅРµРЅРёРµ РїРѕРґ РЅРѕРІС‹Рј РёРјРµРЅРµРј\n" << "5. РџРµС‡Р°С‚СЊ\n" << "6. Р—Р°РєСЂС‹С‚РёРµ\n" << endl;
+			cout << "Р’Р°С€ РІС‹Р±РѕСЂ: ";
 			int var;
 			cin >> var;
 			switch (var)
@@ -481,35 +481,35 @@ public:
 	string create_file() override
 	{
 		system("cls");
-		cout << "Пустой PDF файл " << name_ << " создан!" << endl;
+		cout << "РџСѓСЃС‚РѕР№ PDF С„Р°Р№Р» " << name_ << " СЃРѕР·РґР°РЅ!" << endl;
 		system("pause");
 		return this->name_;
 	}
 	string open_file() override
 	{
 		system("cls");
-		cout << "PDF файл " << this->name_ << " открыт!\n"
-			<< "Можете продолжить работу с этим файлом" << endl;
+		cout << "PDF С„Р°Р№Р» " << this->name_ << " РѕС‚РєСЂС‹С‚!\n"
+			<< "РњРѕР¶РµС‚Рµ РїСЂРѕРґРѕР»Р¶РёС‚СЊ СЂР°Р±РѕС‚Сѓ СЃ СЌС‚РёРј С„Р°Р№Р»РѕРј" << endl;
 		system("pause");
 		return this->data_;
 	}
 	void save_file() override
 	{
 		system("cls");
-		cout << "Файл " << this->name_ << " сохранен!" << endl;
+		cout << "Р¤Р°Р№Р» " << this->name_ << " СЃРѕС…СЂР°РЅРµРЅ!" << endl;
 		system("pause");
 	}
 	void save_new_name_file() override
 	{
 		system("cls");
-		cout << "Данные PDF файла " << this->name_ << " сохранен под новым именем - " << endl;
+		cout << "Р”Р°РЅРЅС‹Рµ PDF С„Р°Р№Р»Р° " << this->name_ << " СЃРѕС…СЂР°РЅРµРЅ РїРѕРґ РЅРѕРІС‹Рј РёРјРµРЅРµРј - " << endl;
 		system("pause");
 
 	}
 	void print() override
 	{
 		system("cls");
-		cout << "Файл " << name_ << " напечатан!" << endl;
+		cout << "Р¤Р°Р№Р» " << name_ << " РЅР°РїРµС‡Р°С‚Р°РЅ!" << endl;
 		system("pause");
 	}
 	void menu_editor(string n)  override
@@ -517,10 +517,10 @@ public:
 		while (true)
 		{
 			system("cls");
-			cout << "Редактор - " << n << ":\n" << endl;
-			cout << "1. Создание файла\n" << "2. Открытие файла\n" << "3. Сохранение файла\n"
-				<< "4. Сохранение под новым именем\n" << "5. Печать\n" << "6. Закрытие\n" << endl;
-			cout << "Ваш выбор: ";
+			cout << "Р РµРґР°РєС‚РѕСЂ - " << n << ":\n" << endl;
+			cout << "1. РЎРѕР·РґР°РЅРёРµ С„Р°Р№Р»Р°\n" << "2. РћС‚РєСЂС‹С‚РёРµ С„Р°Р№Р»Р°\n" << "3. РЎРѕС…СЂР°РЅРµРЅРёРµ С„Р°Р№Р»Р°\n"
+				<< "4. РЎРѕС…СЂР°РЅРµРЅРёРµ РїРѕРґ РЅРѕРІС‹Рј РёРјРµРЅРµРј\n" << "5. РџРµС‡Р°С‚СЊ\n" << "6. Р—Р°РєСЂС‹С‚РёРµ\n" << endl;
+			cout << "Р’Р°С€ РІС‹Р±РѕСЂ: ";
 			int var;
 			cin >> var;
 			switch (var)
@@ -560,3 +560,36 @@ public:
 	}
 
 };
+
+//Editor* ed = nullptr;
+//Document* doc = nullptr;
+//cout << "Р РђР‘РћРўРђ РЎ Р¤РђР™Р›РђРњР" << endl;
+//cout << "----------------\n" << endl;
+//cout << "Р’С‹Р±РµСЂРёС‚Рµ С„РѕСЂРјР°С‚ С„Р°Р№Р»Р°\n" << endl;
+//cout << "1. РўРµРєСЃС‚РѕРІС‹Р№\n" << "2. Р“СЂР°С„РёС‡РµСЃРєРёР№\n" << "3. Excel\n"
+//<< "4. PDF\n" << "5. Р’С‹С…РѕРґ\n" << endl;
+//cout << "Р’Р°С€ РІС‹Р±РѕСЂ: ";
+//int var;
+//cin >> var;
+//switch (var)
+//{
+//case 1:
+//	ed = new TextEditor;
+//	break;
+//case 2:
+//	ed = new GraphicEditor;
+//	break;
+//case 3:
+//	ed = new ExcelEditor;
+//	break;
+//case 4:
+//	ed = new PDFEditor;
+//	break;
+//case 5:
+//	exit(0);
+//default:
+//	break;
+//}
+//doc = ed->creat();
+//string name = doc->get_name();
+//ed->menu_editor(name);
