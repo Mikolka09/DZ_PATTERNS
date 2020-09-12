@@ -8,19 +8,28 @@
 using namespace std;
 
 
-class IVectorina
+class IQustions
 {
 
 public:
 	static int count;
 	virtual string getQustion(int nomer) = 0;
+
+};
+
+int IQustions::count = 0;
+
+class IAnswers
+{
+
+public:
+
 	virtual string getAnswers(int nomer) = 0;
 };
 
-int IVectorina::count = 0;
 
 
-class Qustions : public IVectorina
+class Qustions : public IQustions
 {
 	map<int, string> qustions;
 public:
@@ -32,7 +41,7 @@ public:
 		qustions[4] = "4. Какой советский фильм считается первым цветным фильмом?";
 		qustions[5] = "5. Этот фильм называют самым известным деревенским детективом СССР. Что это за фильм?";
 	}
-	
+
 	string getQustion(int nomer) override
 	{
 		if (qustions.count(nomer))
@@ -46,17 +55,17 @@ public:
 
 };
 
-class Answers :IVectorina
+class Answers : public IAnswers
 {
 	map<int, string> answers;
 public:
 	Answers()
 	{
-		answers[1] = "Жертвы моря";
-		answers[2] = "Париж";
-		answers[3] = "Золотая пальмовая ветвь";
-		answers[4] = "Броненосец Потемкин";
-		answers[5] = "Анискин";
+		answers[1] = "жертвы моря";
+		answers[2] = "париж";
+		answers[3] = "золотая пальмовая ветвь";
+		answers[4] = "броненосец Потемкин";
+		answers[5] = "анискин";
 	}
 	string getAnswers(int nomer) override
 	{
@@ -67,12 +76,12 @@ public:
 	}
 };
 
-class QustionsProxy : IVectorina
+class QustionsProxy : public IQustions
 {
 	map<int, string> qustions_cash;
 	Qustions* qus;
 public:
-	string getAnswers(int nomer) override {}
+
 	string getQustion(int nomer) override
 	{
 		if (qustions_cash.count(nomer))
@@ -82,6 +91,7 @@ public:
 		}
 		else
 		{
+			count = 0;
 			qus = new Qustions;
 			string qustion = qus->getQustion(nomer);
 			qustions_cash[nomer] = qustion;
@@ -93,13 +103,13 @@ public:
 
 };
 
-class AnswersProxy : IVectorina
+class AnswersProxy : public IAnswers
 {
 	map<int, string> answers_cash;
 	Answers* ans;
 
 public:
-	string getQustion(int nomer) override {}
+
 	string getAnswers(int nomer) override
 	{
 		if (answers_cash.count(nomer))

@@ -11,6 +11,8 @@ using namespace std;
 int main()
 {
 	setlocale(0, "");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
 
 	cout << "\n\n\n" << endl;
 	cout << "\t\tПодождите пожалуйста, Викторина загружается:\n" << endl;
@@ -33,12 +35,13 @@ int main()
 	cout << "\t\t Ваш выбор: ";
 	int var;
 	cin >> var;
+	cin.ignore();
 	switch (var)
 	{
 	case 1:
 	{
 		QustionsProxy* qp = new QustionsProxy;	
-		
+		AnswersProxy* ans = new AnswersProxy;
 		int n = 1;
 		bool res = true;
 		while (n != 6)
@@ -46,7 +49,7 @@ int main()
 			bool cont = true;
 			while (cont)
 			{
-				if (IVectorina::count == 3)
+				if (IQustions::count == 3)
 				{
 					res = false;
 					break;
@@ -58,9 +61,13 @@ int main()
 					cout << "Вопрос номер - " << n << endl << endl;
 					cout << qp->getQustion(n) << endl << endl;
 					cout << "Ваше ответ: ";
+					char buf[30];
+					cin.getline(buf, 30);
+					char* buff = new char[strlen(buf) + 1];
+					strcpy(buff, buf);
 					string answer;
-					cin >> answer;
-					if (answer == qp->getAnswers(n))
+					answer = buff;
+					if (answer == ans->getAnswers(n))
 					{
 						cont = false;
 						n++;
@@ -86,7 +93,7 @@ int main()
 			cout << "\n\n\n";
 			cout << "\t\tПОЗДРАВЛЯЮ ВЫ ВЫГРАЛИ!! МОЖЕТЕ ПОЛУЧИТЬ ПРИЗ!!\n" << endl;
 			cout << "\t\tВведите свой номер телефона: ";
-			int tel;
+			string tel;
 			cin >> tel;
 			system("cls");
 			cout << "\n\n\n" << endl;
